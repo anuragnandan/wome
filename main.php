@@ -5,8 +5,12 @@ use GuzzleHttp\Client;
 
 $dotenv = new Dotenv\Dotenv(__DIR__);
 $dotenv->load();
+$options = getopt("", ["from:"]);
 
-$route = getRoute(getenv('HOUSE'), getenv('WORK'));
+if(isset($options['from']) || $options['from'] == 'WORK')
+  $route = getRoute(getenv('WORK'), getenv('HOUSE'));
+else
+  $route = getRoute(getenv('HOUSE'), getenv('WORK'));
 sendRoute($route);
 
 function getResponse($type = 'GET', $url, $params = array())
