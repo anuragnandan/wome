@@ -1,12 +1,10 @@
 # WOME
 
-Recieve Home to Work and vice versa route notification with faster route every day.
+Recieve Home to Work and vice versa route notification with faster route every day. Get your Google API key and PushMe keys to run this.
 
 ```
-composer install
-cp .env.example .env
-# Fill out proper values in .env
-php main.php
+docker build -t wome .
+docker run --env KEY=somegooglekey --env NOTIFY_KEY=somepushmekey wome php /app/main.php
 ```
 
 ### Requires

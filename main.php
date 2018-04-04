@@ -7,7 +7,7 @@ $dotenv = new Dotenv\Dotenv(__DIR__);
 $dotenv->load();
 $options = getopt("", ["from:"]);
 
-if(isset($options['from']) || $options['from'] == 'WORK')
+if(!isset($options['from']) || $options['from'] == 'WORK')
   $route = getRoute(getenv('WORK'), getenv('HOUSE'));
 else
   $route = getRoute(getenv('HOUSE'), getenv('WORK'));
