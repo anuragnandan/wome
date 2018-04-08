@@ -1,4 +1,5 @@
 FROM composer
+
 WORKDIR /app
 
 COPY composer.json /app

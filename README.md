@@ -3,8 +3,19 @@
 Recieve Home to Work and vice versa route notification with faster route every day. Get your Google API key and PushMe keys to run this.
 
 ```
-docker build -t wome .
-docker run --env KEY=somegooglekey --env NOTIFY_KEY=somepushmekey wome php /app/main.php
+docker pull anuragnandan/wome
+```
+For HOME->WORK
+```
+docker run --env KEY=somegooglekey 
+           --env NOTIFY_KEY=somepushmekey 
+           wome run-script morning
+```
+For WORK->HOME
+```
+docker run --env KEY=somegooglekey 
+           --env NOTIFY_KEY=somepushmekey 
+           wome run-script evening
 ```
 
 ### Requires
