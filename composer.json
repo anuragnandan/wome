@@ -2,5 +2,9 @@
     "require": {
         "guzzlehttp/guzzle": "~6.0",
         "vlucas/phpdotenv": "^2.4"
+    },
+    "scripts": {
+      "morning": "php main.php --from HOUSE",
+      "evening": "php main.php --from WORK"
     }
 }
