@@ -3,3 +3,11 @@ php:
   - 7.0
 install:
   - composer install
+
+jobs:
+  include:
+    - stage: build docker image
+      script:
+        - docker build -t anuragnandan/wome .
+        - docker push anuragnandan/wome
+
